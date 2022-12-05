@@ -9,12 +9,15 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/api/productos", apiRouter);
 
+app.use(express.static('public'))
+
 const server = app.listen(PORT, () =>{
     console.log(`Servidor http escuchando en el puerto ${server.address().port}`);
 })
 
+
+
 server.on('error', err =>{
     console.log(`Error en servidor: ${err}`);
 })
-
 
