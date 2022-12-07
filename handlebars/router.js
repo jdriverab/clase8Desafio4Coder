@@ -2,19 +2,17 @@ const express = require("express");
 const { Router } = express;
 
 const data = [
-    {"id": 1,"title": "Cebolla", "thumbnail": "https://LaDireccion", "precio":5000},
-    {"id": 2,"title": "Lechuga","thumbnail": "https://LaDireccion2", "precio":6000},
-    {"id": 3,"title": "Ajo","thumbnail": "https://LaDireccion3",  "precio": 7000}
+    {id: 1,title: "Cebolla", thumbnail: "https://LaDireccion", precio:5000},
+    {id: 2,title: "Lechuga",thumbnail: "https://LaDireccion2", precio:6000},
+    {id: 3,title: "Ajo",thumbnail: "https://LaDireccion3",  precio: 7000}
 ]
 const mainData = data;
 
 const apiRouter = new Router();
 
-
-
 apiRouter.get('/', (req, res)=>{
-    res.send(mainData)
 
+    return res.render("layouts/productLayout", data)
 });
 
 apiRouter.get('/:id', async (req, res)=>{
@@ -41,7 +39,7 @@ apiRouter.post('/', (req, res)=>{
 
     mainData.push(newData)
 
-    res.send(mainData);
+    return res.render("layouts/productLayout", data)
     
 });
 

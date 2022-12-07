@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
     <title>Nuevo producto</title>
 </head>
 <body>
 
-    <form action="submit">
+    <form action="/productos" method="post">
 
         <label for="nameProduct">Ingresar nombre del producto</label>
-        <input id="nameProduct" type="text">
+        <input id="nameProduct" type="text" name="title">
         
         <br>
 
         <label for="urlProduct">Ingresar url de imagen del producto</label>
-        <input id="urlProduct" type="text">
+        <input id="urlProduct" type="text" name="thumbnail">
 
 
         <br>
 
         <label for="precioProduct">Ingresar precio del producto</label>
-        <input id="precioProduct" type="text">
+        <input id="precioProduct" type="text" name="precio">
 
 
         <br>
@@ -31,6 +33,9 @@
 
 
     </form>
+
     
 </body>
+
+
 </html>
